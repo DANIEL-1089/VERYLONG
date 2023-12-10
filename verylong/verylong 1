@@ -1,0 +1,54 @@
+#include <iostream>
+#include <ctime>
+#include <wchar.h>
+#include <Windows.h>
+#include <algorithm>
+#include <vector>
+#include <string>
+#include <string.h>
+#include <stdlib.h>
+#include <cstring>
+#include <conio.h>
+#include <iomanip>
+#include <process.h>
+#include <ctime>
+#include <cstdlib>
+#include <typeinfo>
+#include <fstream>
+#include <strstream>
+
+
+using namespace std;
+const int SZ = 1000;
+
+class verylong {
+private:
+    char vlstr[SZ];
+    int vlen;
+    verylong multdigit(const int) const;
+    verylong mult10(const verylong) const;
+public:
+    verylong() : vlen(0) {
+        vlstr[0] = '\0';
+    }
+    verylong(const char s[SZ]) {
+        strcpy(vlstr, s);
+        vlen = strlen(s);
+    }
+    verylong(const unsigned long n) {
+        ltoa(n, vlstr, 10);
+        strrev(vlstr);
+        vlen = strlen(vlstr);
+    }
+    void putv1() const;
+    void getv1();
+    verylong operator + (const verylong);
+    verylong operator * (const verylong);
+};
+
+int main()
+{
+
+
+    return 0;
+}
